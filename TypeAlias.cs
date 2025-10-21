@@ -1,5 +1,8 @@
-#if !NIL
-#define NIL
+#if false
+<ItemGroup>
+	<Compile Include="../TypeAlias.cs" />
+</ItemGroup>
+#endif
 
 #pragma warning disable CS8981
 global using u8 = System.Byte;
@@ -13,20 +16,18 @@ global using i64 = System.Int64;
 global using f32 = System.Single;
 global using f64 = System.Double;
 global using str = System.String;
+global using obj = System.Object;
 global using nil = System.Object;
-
 global using CT = System.Threading.CancellationToken;
 
-global using static Tsinswreng.CsTypeAlias.Nil_;
+#pragma warning disable CS0436
+global using static Tsinswreng.CsTypeAlias.Nil;
 namespace Tsinswreng.CsTypeAlias {
-	public class Nil_{
-		public const nil Nil = null!;
+	internal class Nil{
+		public const nil NIL = null!;
 	}
 }
 
-
-
-#endif
 
 //使nil潙空object即可
 //蔿防跨項目不一致、勿自定義public class Nil_{ public static Nil_ Nil = null!; }
